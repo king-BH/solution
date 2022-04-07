@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="/fragment/header.html :: fragment-header"></div>
+</head>
+<body>
+    <div th:replace="/fragment/navigation.html :: fragment-navigation"></div>
+    
+    <div>
+        <h3>회원관련</h3>
+	    <ul>
+	        <li><a th:href="@{/loginNode}">로그인</a></li>
+	        <li><a th:href="@{/signUpNode}">회원가입</a></li>
+	    </ul>
+    </div>
+    
+
+    <div th:replace="/fragment/footer.html :: fragment-footer"></div>
+</body>
+</html>

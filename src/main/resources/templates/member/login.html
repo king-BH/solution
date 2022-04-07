@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="/fragment/header.html :: fragment-header"></div>
+</head>
+<body>
+    <div th:replace="/fragment/navigation.html :: fragment-navigation"></div>
+    
+    <h4>로그인</h4>
+    <form method="POST" name="login" action="loginForm">
+	    <table>
+	        <tr>
+	            <th>아이디</th>
+	            <td><input type="text" name="id" value="" placeholder="이메일 주소 입력"></td>
+	        </tr>
+	         <tr>
+                <th>비밀번호</th>
+                <td><input type="text" name="password" value="" placeholder="비밀번호 입력"></td>
+            </tr>
+	    </table>
+	    <button type="submit">로그인</button>
+    </form>
+    <div th:replace="/fragment/footer.html :: fragment-footer"></div>
+</body>
+</html>

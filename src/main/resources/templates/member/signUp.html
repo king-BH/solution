@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="/fragment/header.html :: fragment-header"></div>
+</head>
+<body>
+    <div th:replace="/fragment/navigation.html :: fragment-navigation"></div>
+    
+    <h4>회원가입</h4>
+    
+    <form method="post" th:object="${signUpForm}" action="signUp_action">
+    
+	 <input th:field="*{certification_yn}" type="hidden" value="" id="certification_yn" class="form-control"/>
+
+        <table>
+            <tr>
+                <th>아이디</th>
+                <td colspan="2">
+                    <input th:field="*{id}" type="text" value="" placeholder="이메일 주소 입력" class="form-control">
+                    <br>
+                    <span th:errors="*{id}"></span>
+                </td>
+            </tr>
+             <tr>
+                <th>비밀번호</th>
+                <td colspan="2">
+                    <input th:field="*{password}" type="text" value="" placeholder="비밀번호 입력" class="form-control">
+                    <br>
+                    <span th:errors="*{password}"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>비밀번호 확인</th>
+                <td colspan="2">
+                    <input th:field="*{confirm_password}" type="text" value="" placeholder="비밀번호 확인" class="form-control">
+                    <br>
+                    <span th:errors="*{confirm_password}"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>이름</th>
+                <td colspan="2">
+                    <input th:field="*{name}" type="text" value="" placeholder="실명 입력" class="form-control">
+                    <br>
+                    <span th:errors="*{name}"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>휴대폰번호</th>
+                <td>
+                    <input th:field="*{phone}" type="text" value="" placeholder="휴대폰번호 입력">
+                    <br>
+                    <span th:errors="*{phone}"></span>
+                </td>
+                <td>
+                    <button type="button" id="certification">휴대폰번호 인증</button>
+                    <span th:errors="*{certification_yn}"></span>
+                </td>
+            </tr>
+        </table>
+	    
+        <button type="submit">회원가입</button>
+    
+    </form>
+    
+    <div th:replace="/fragment/footer.html :: fragment-footer"></div>
+</body>
+
+<script type="text/javascript">
+
+/* eventListener */
+    var certification_btn = document.getElementById("certification");
+
+	certification_btn.addEventListener('click',function(event){
+		
+		debugger;
+		
+	    var certification_yn = document.getElementById("certification_yn");
+	    
+	    certification_yn.value = "Y";
+	});
+
+</script>
+
+    
+</html>

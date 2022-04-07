@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<div th:fragment="fragment-navigation" style="border-bottom:1px solid black;">
+    <h3>네비게이션</h3>
+    <ul style="display:flex; justify-content:space-around;">
+        <li><a th:href="@{/memberMenuNode}">회원관련</a></li>
+        <li><a th:href="@{/saleMenuNode}">매물관련</a></li>
+    </ul>
+</div>
+
+</html>
